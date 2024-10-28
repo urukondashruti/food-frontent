@@ -1,57 +1,116 @@
-.header{
-    height: 34vw;
-    margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
+.header {
+    height: 90vh;
+    margin: 0 auto;
+    background: url('/header_img.png') no-repeat center center;
+    background-size: cover;
     position: relative;
-}
-.header-contents{
-    position: absolute;
-    
     display: flex;
-    justify-content: center;
-    align-items: start;
+    align-items: center;
+    padding: 20px; /* Ensures padding on smaller screens */
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
-    gap:1.5vw;
+    gap: 1.5vw;
     max-width: 50%;
-    bottom: 10%;
-    left:6vw;
+    bottom: 15%; /* More space on the bottom for smaller screens */
+    left: 6vw;
     animation: fadeIn 3s;
 }
-.header-contents h2{
+
+.header-contents h2 {
     font-weight: 500;
-    color:white;
-    font-size:max(4.5vw,22px)
+    color: white;
+    font-size: max(4.5vw, 22px);
 }
-.header-contents p{
-    color:white;
-    font-size: 1 vw;
+
+.header-contents p {
+    color: white;
+    font-size: 1vw;
+    max-width: 80%; /* Helps text wrap neatly */
+    line-height: 1.5;
 }
-.header-contents button{
+
+.header-contents button {
     border: none;
-    color:#747474;
+    color: #747474;
     font-weight: 500;
-    padding:1vw 2.3vw;
+    padding: 1vw 2.3vw;
     background-color: white;
-    font-size:max(1.5vw,13px);
+    font-size: max(1.5vw, 13px);
     border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
-@media (max-width:1050px){
-    .header{
-        height:38vw;
+
+.header-contents button:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Tablet and larger mobile screens */
+@media (max-width: 1050px) {
+    .header {
+        height: 60vh;
     }
-    .header-contents{
-        max-width:45%    };
+    .header-contents {
+        max-width: 60%;
+        bottom: 12%;
+    }
+    .header-contents h2 {
+        font-size: max(4vw, 20px);
+    }
+    .header-contents p {
+        font-size: 1.2vw;
+    }
+    .header-contents button {
+        padding: 1.5vw 3vw;
+    }
 }
-@media (max-width:750px){
-    
-    .header-contents{
-        max-width:65%   
-     }
-     .header-contents p{
-  display: none;
-     }
-     .header-contents button{
-        padding:2vw 4vw;
-     }
+
+/* Smaller mobile screens */
+@media (max-width: 750px) {
+    .header {
+        height: 50vh;
+        padding: 15px;
+    }
+    .header-contents {
+        max-width: 80%;
+        left: 5vw;
+        bottom: 10%;
+    }
+    .header-contents h2 {
+        font-size: max(5vw, 18px);
+    }
+    .header-contents p {
+        display: none; /* Hide paragraph text for simplicity */
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}
+
+/* Extra small screens (e.g., phones in portrait) */
+@media (max-width: 480px) {
+    .header {
+        height: 45vh;
+        background-size: cover;
+    }
+    .header-contents {
+        max-width: 90%;
+        left: 5vw;
+        bottom: 8%;
+    }
+    .header-contents h2 {
+        font-size: max(6vw, 16px);
+        text-align: center;
+    }
+    .header-contents button {
+        padding: 3vw 6vw;
+        font-size: 14px;
+    }
 }

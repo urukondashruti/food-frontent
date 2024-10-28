@@ -4,7 +4,6 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className='footer'>
         <div className="footer" id="footer">
             <div className="footer-content">
                 <div className="footer-content-left">
@@ -37,7 +36,6 @@ const Footer = () => {
             <hr />
             <p className="footer-copyright">Copyright 2024 © Tomato.com-All Right Reserved </p>
         </div>
-    </div>
   )
 }
 

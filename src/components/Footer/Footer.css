@@ -1,59 +1,108 @@
-.footer{
+.footer {
     color: #d9d9d9;
     background-color: #323232;
     display: flex;
     align-items: center;
-    gap: 20px;
     flex-direction: column;
-    padding:20px 8vw;
-    padding-top: 80px;
+    padding: 40px 8vw; /* Increased top padding for better spacing */
     margin-top: 100px;
 }
-.footer-content{
+
+.footer-content {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap:80px;
+    grid-template-columns: repeat(3, 1fr); /* Use repeat for better scaling */
+    gap: 40px; /* Reduced gap for smaller screens */
 }
-.footer-content-left,.footer-content-right,.footer-content-center{
-    flex-direction: column;
-    align-items: start;
+
+.footer-content-left,
+.footer-content-right,
+.footer-content-center {
     display: flex;
-    gap:20px;
+    flex-direction: column;
+    align-items: flex-start; /* Changed to flex-start for better alignment */
+    gap: 15px; /* Reduced gap for smaller spacing */
 }
-.footer-content-left li ,.footer-content-right li ,.footer-content-center li{
-list-style: none;
-margin-bottom: 10px;
-cursor: pointer;
 
+.footer-content-left li,
+.footer-content-right li,
+.footer-content-center li {
+    list-style: none;
+    margin-bottom: 5px; /* Reduced bottom margin for better spacing */
+    cursor: pointer;
 }
-.footer-content-right h2 ,.footer-content-center h2{
-   color:white
-    
+
+.footer-content-right h2,
+.footer-content-center h2 {
+    color: white;
+}
+
+.footer-social-icon img {
+    width: 40px;
+    margin-right: 10px; /* Reduced margin for better spacing */
+}
+
+.footer hr {
+    width: 100%;
+    height: 2px;
+    margin: 30px 0px;
+    background-color: grey;
+    border: none;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr; /* Change to 2 columns */
+        gap: 20px; /* Reduced gap */
     }
-    .footer-social-icon  img{
-        width: 40px;
-        margin-right: 15px;
+}
 
-    }
-    .footer hr{
-        width:100%;
-height:2px;
-margin:30px 0px;
-background-color: grey;
-border:none
-    }
-    @media (max-width:750px){
-        .footer-content{
-            display: flex;
-            flex-direction: column;
-            gap:35px;
-        }
-        .footer-copyright{
-            text-align: center;
-
-
-        }
+@media (max-width: 750px) {
+    .footer-content {
+        flex-direction: column; /* Stack items on smaller screens */
+        gap: 25px;
     }
 
+    .footer-content-left,
+    .footer-content-right,
+    .footer-content-center {
+        align-items: center; /* Center align for small screens */
+    }
 
+    .footer-social-icon {
+        justify-content: center; /* Center social icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 5vw; /* Adjust padding for small screens */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack all items */
+        gap: 15px;
+    }
+
+    .footer-content-left,
+    .footer-content-right,
+    .footer-content-center {
+        align-items: center; /* Center align for very small screens */
+    }
+
+    .footer-social-icon img {
+        width: 30px; /* Smaller icons on very small screens */
+        margin-right: 5px; /* Reduce margin */
+    }
+
+    .footer-content-right h2,
+    .footer-content-center h2 {
+        font-size: 1.5em; /* Adjust font size */
+    }
+}
